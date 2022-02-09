@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Counter } from "./component/Counter";
+import InputCount from "./component/InputCount";
+import classes from "./App.module.css";
 
 function App() {
+  const [start, setStart] = useState();
+  const [end, setEnd] = useState();
+
+  const setCountHandler = (start, end) => {
+    setStart(start);
+    setEnd(end);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.App}>
+      {!start && <InputCount setCount={setCountHandler} />}
+      {start && <Counter start={start} end={end} />}
     </div>
   );
 }
