@@ -17,7 +17,7 @@ export const Counter = (props) => {
 
   return (
     <React.Fragment>
-      <h1>Counter</h1>
+      <h1>Timer</h1>
       <div value={count}>{count}</div>
 
       <button>double</button>

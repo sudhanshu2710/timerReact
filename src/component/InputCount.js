@@ -14,7 +14,7 @@ const InputCount = (props) => {
   };
   return (
     <React.Fragment>
-      <h3>Input the initial Count</h3>
+      <h3>Input the time interval</h3>
 
       <input
         type="text"
