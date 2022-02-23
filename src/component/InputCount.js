@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const InputCount = (props) => {
-  const [start, setStart] = useState();
-  const [end, setEnd] = useState();
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(0);
   const setStartInout = (e) => {
     setStart(Number(e.currentTarget.value));
   };
@@ -15,7 +15,7 @@ const InputCount = (props) => {
   return (
     <React.Fragment>
       <h3>Input the time interval</h3>
-
+      <label>start</label>
       <input
         type="text"
         value={start}

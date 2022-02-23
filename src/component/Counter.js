@@ -5,15 +5,15 @@ export const Counter = (props) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCount((prev) => {
+        if (prev > props.end - 1) clearInterval(timer);
         return prev + 1;
       });
     }, 1000);
-    if (count > props.end - 1) clearInterval(timer);
 
     return () => {
       clearInterval(timer);
     };
-  }, [count]);
+  }, []);
 
   return (
     <React.Fragment>
